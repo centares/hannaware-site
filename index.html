@@ -60,6 +60,15 @@
   table.data td:first-child { font-weight: 600; width: 34%; color: var(--blue); }
 
   .contact { display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  .cform { max-width: 720px; display: grid; gap: 14px; }
+  .cform .row { display: grid; gap: 14px; grid-template-columns: 1fr 1fr; }
+  .cform label { display: grid; gap: 6px; font-size: 14px; font-weight: 600; color: var(--ink); }
+  .cform input, .cform select, .cform textarea { font: inherit; font-weight: 400; padding: 10px 12px; border: 1px solid var(--line); border-radius: 6px; background: #fff; color: var(--ink); width: 100%; }
+  .cform input:focus, .cform select:focus, .cform textarea:focus { outline: 2px solid var(--blue); border-color: var(--blue); }
+  .btn-primary { background: var(--blue); color: #fff; border: 0; cursor: pointer; justify-self: start; font: inherit; font-weight: 600; }
+  .thanks { display: none; color: var(--blue); font-weight: 600; margin-top: 14px; }
+  .thanks:target { display: block; }
+  @media (max-width: 640px) { .cform .row { grid-template-columns: 1fr; } }
   footer { border-top: 1px solid var(--line); padding: 22px 0; color: var(--muted); font-size: 14px; }
 
   @media (max-width: 640px) {
@@ -77,7 +86,6 @@
     <nav>
       <a href="#services">Services</a>
       <a href="#why">Why Hannaware</a>
-      <a href="#company">Company Data</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
@@ -155,45 +163,42 @@
   </div>
 </section>
 
-<section id="company">
-  <div class="wrap">
-    <h2>Company Data</h2>
-    <p class="lead">For procurement and contracting teams.</p>
-    <table class="data">
-      <tr><td>Legal name</td><td>Hannaware LLC</td></tr>
-      <tr><td>Entity</td><td>Connecticut limited liability company; small business</td></tr>
-      <tr><td>UEI / CAGE</td><td>SAM.gov registration in progress</td></tr>
-      <tr><td>NAICS</td><td>541512 (primary), 541511, 541519</td></tr>
-      <tr><td>UNSPSC</td><td>81111500, 81111700, 81111800, 81112000, 81112200</td></tr>
-      <tr><td>Insurance</td><td>General and professional liability; workers' compensation</td></tr>
-      <tr><td>Principal</td><td>Jose Luis Burgoa, MBA (University of Illinois Urbana-Champaign), MCSE</td></tr>
-    </table>
-    <p style="margin-top:20px"><a class="btn btn-light" style="border:1px solid var(--blue)" href="Hannaware-Capability-Statement.pdf">Download capability statement (PDF)</a></p>
-  </div>
-</section>
-
 <section class="soft" id="contact">
   <div class="wrap">
     <h2>Contact</h2>
-    <p class="lead">Tell us about your upgrade, migration or support need. We respond within one business day.</p>
-    <div class="contact">
-      <div class="card">
-        <h3>Hannaware LLC</h3>
-        <p>440 Tunxis Ave<br>Bloomfield, CT 06002</p>
-        <p>Phone: <a href="tel:+18602554302">(860) 255-4302</a><br>
-           Email: <a href="mailto:luis.burgoa.rocks@gmail.com?subject=Hannaware%20inquiry">luis.burgoa.rocks@gmail.com</a></p>
+    <p class="lead">Tell us about your upgrade, migration or support need. Prime contractors: we welcome teaming and subcontracting opportunities.</p>
+    <form class="card cform" action="https://formsubmit.co/luis.burgoa.rocks@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="Hannaware website inquiry">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" value="https://hannaware.com/#thanks">
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+      <div class="row">
+        <label>Name *<input type="text" name="name" required></label>
+        <label>Organization<input type="text" name="organization"></label>
       </div>
-      <div class="card">
-        <h3>Teaming &amp; subcontracting</h3>
-        <p>Prime contractors bidding PeopleSoft, Oracle database or OCI work: we welcome teaming and subcontracting opportunities.</p>
-        <p><a href="mailto:luis.burgoa.rocks@gmail.com?subject=Teaming%20opportunity">Email us about teaming</a></p>
+      <div class="row">
+        <label>Email *<input type="email" name="email" required></label>
+        <label>Phone<input type="tel" name="phone"></label>
       </div>
-    </div>
+      <label>Topic
+        <select name="topic">
+          <option>PeopleSoft / PeopleTools upgrade</option>
+          <option>Database administration (Oracle, SQL Server, DB2)</option>
+          <option>Cloud migration / OCI / AWS</option>
+          <option>Assessment &amp; roadmap</option>
+          <option>Teaming / subcontracting</option>
+          <option>Other</option>
+        </select>
+      </label>
+      <label>Message *<textarea name="message" rows="5" required></textarea></label>
+      <button type="submit" class="btn btn-primary">Send message</button>
+    </form>
+    <p id="thanks" class="thanks">Thank you, your message was sent. We'll be in touch shortly.</p>
   </div>
 </section>
 
 <footer>
-  <div class="wrap">&copy; 2026 Hannaware LLC &middot; Bloomfield, Connecticut</div>
+  <div class="wrap">&copy; 2026 Hannaware LLC &middot; Connecticut, USA</div>
 </footer>
 
 </body>
