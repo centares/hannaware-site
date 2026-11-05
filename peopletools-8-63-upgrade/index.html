@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PeopleTools 8.63 Upgrade: Planning Guide and Checklist | Hannaware</title>
+<meta name="description" content="How to plan a PeopleTools 8.63 upgrade: release availability on OCI and on-premises, certification checks, PUM and DPK preparation, testing and cutover, and how to automate upgrade server builds.">
+<meta name="keywords" content="PeopleTools 8.63, PeopleTools 8.63 upgrade, PeopleTools upgrade checklist, PeopleTools upgrade plan, upgrade to PeopleTools 8.63, PeopleSoft 8.63, PeopleSoft Cloud Manager 8.63, PeopleTools upgrade automation">
+<link rel="canonical" href="https://hannaware.com/peopletools-8-63-upgrade/">
+<link rel="icon" href="/logo.jpg" type="image/jpeg">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PeopleTools 8.63 Upgrade: Planning Guide and Checklist">
+<meta property="og:description" content="A practical checklist for planning and running a PeopleTools 8.63 upgrade.">
+<meta property="og:url" content="https://hannaware.com/peopletools-8-63-upgrade/">
+<meta property="og:image" content="https://hannaware.com/logo.jpg">
+<link rel="stylesheet" href="/site.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "PeopleTools 8.63 Upgrade: Planning Guide and Checklist",
+  "datePublished": "2026-11-05",
+  "dateModified": "2026-11-05",
+  "author": { "@type": "Organization", "name": "Hannaware LLC", "url": "https://hannaware.com/" },
+  "publisher": { "@type": "Organization", "name": "Hannaware LLC", "logo": { "@type": "ImageObject", "url": "https://hannaware.com/logo.jpg" } },
+  "mainEntityOfPage": "https://hannaware.com/peopletools-8-63-upgrade/"
+}
+</script>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/logo.jpg" alt="Hannaware LLC logo">HANNAWARE LLC</a>
+    <nav>
+      <a href="/#services">Services</a>
+      <a href="/peopletools-upgrade/">PeopleTools Upgrades</a>
+      <a href="/peopletools-8-63-upgrade/">PeopleTools 8.63</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="crumb"><a href="/">Home</a> &rsaquo; <a href="/peopletools-upgrade/">PeopleTools Upgrades</a> &rsaquo; PeopleTools 8.63</div>
+    <h1>PeopleTools 8.63 Upgrade: Planning Guide and Checklist</h1>
+    <p>What to check, prepare and automate before moving your PeopleSoft applications to PeopleTools 8.63.</p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap narrow">
+    <article>
+      <p class="meta">Published November 5, 2026 &middot; Hannaware LLC</p>
+
+      <h2>Where PeopleTools 8.63 stands</h2>
+      <p>Oracle released PeopleTools 8.63 first for Oracle Cloud Infrastructure through PeopleSoft Cloud Manager (July 2026), then for on-premises installation (October 2026, starting with patch 8.63.04). With on-premises availability, PeopleTools 8.63 is now a practical target for organizations running 8.60, 8.61 or 8.62.</p>
+      <div class="callout">Always confirm the current patch level, certifications and support dates for your platform on My Oracle Support before you commit to a plan. Certifications change with each patch.</div>
+
+      <h2>PeopleTools 8.63 upgrade checklist</h2>
+
+      <h3>1. Assess where you are</h3>
+      <ul>
+        <li>Record your current PeopleTools release and patch, application releases (HCM, FSCM, Campus Solutions, Interaction Hub, ELM) and PUM image levels.</li>
+        <li>Inventory customizations, integrations (Integration Broker) and batch processes that a new release could affect.</li>
+        <li>Note your infrastructure: database version, operating systems, WebLogic, Tuxedo, COBOL and search (Elasticsearch or OpenSearch).</li>
+      </ul>
+
+      <h3>2. Check certifications</h3>
+      <ul>
+        <li>Compare every infrastructure component against the PeopleTools 8.63 certifications for your platform.</li>
+        <li>Plan database, operating system or middleware upgrades that must happen before, or together with, the PeopleTools upgrade.</li>
+        <li>Confirm browser and client requirements for your users.</li>
+      </ul>
+
+      <h3>3. Decide where it will run</h3>
+      <ul>
+        <li><b>OCI:</b> PeopleSoft Cloud Manager can provision and upgrade 8.63 environments.</li>
+        <li><b>On-premises or AWS:</b> build new tiers with the 8.63 Deployment Packages (DPKs).</li>
+        <li>Use the upgrade to retire old servers instead of patching them in place.</li>
+      </ul>
+
+      <h3>4. Automate the environment builds</h3>
+      <ul>
+        <li>Expect to build the upgrade environment several times: initial pass, test moves and the final cutover.</li>
+        <li>Script the builds in Jenkins so every pass is identical, including start/stop, cache clearing and refreshes with data masking.</li>
+        <li>AI coding tools can speed this up considerably: we use them to automate building upgrade and patch servers and keep reusable automation for each upgrade and patch cycle.</li>
+      </ul>
+
+      <h3>5. Run the upgrade and test</h3>
+      <ul>
+        <li>Run the PeopleTools upgrade with Change Assistant and apply the PUM updates you need.</li>
+        <li>Plan at least one full test move before production, and time each step.</li>
+        <li>Give functional teams a clear test window for regression, integrations and reports.</li>
+      </ul>
+
+      <h3>6. Cut over with a short outage</h3>
+      <ul>
+        <li>Use the timings from your test moves to set a realistic cutover window.</li>
+        <li>Where possible, run PeopleTools and PUM upgrades in parallel across applications to shorten downtime.</li>
+        <li>Keep disaster-recovery environments in sync (for example with Oracle GoldenGate) and have a tested fallback.</li>
+      </ul>
+
+      <h3>7. Stabilize and stay current</h3>
+      <ul>
+        <li>Validate, tune application servers and JVMs for peak load, and monitor the first business cycles.</li>
+        <li>Put quarterly Critical Patch Updates (CPUs) and monthly Critical Security Patch Updates (CSPUs) on an automated schedule so the next upgrade starts from a clean, current baseline.</li>
+      </ul>
+
+      <h2>How Hannaware helps</h2>
+      <p>Hannaware delivers PeopleTools upgrades end to end: readiness assessment, certification review, automated environment builds with Jenkins and AI-assisted tooling, the upgrade itself, and post-upgrade stabilization. Our upgrade experience spans PeopleTools 8.55 through 8.62 across HCM, FSCM, Campus Solutions and Interaction Hub, on-premises, on OCI with Cloud Manager, and on AWS.</p>
+      <p><a class="btn btn-primary" href="/#contact">Request a PeopleTools 8.63 upgrade assessment</a></p>
+      <p>See all <a href="/peopletools-upgrade/">PeopleTools upgrade services</a>.</p>
+    </article>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">&copy; 2026 Hannaware LLC &middot; Connecticut, USA &middot; <a href="/">hannaware.com</a></div>
+</footer>
+</body>
+</html>
