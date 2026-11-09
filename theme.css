@@ -42,3 +42,16 @@ section.feature h2 { color: #fff; }
 section.feature > .wrap > h2::after { background: #8fb3ff; }
 section.feature .lead { color: #d7e2f5; }
 section.feature .card { border-top-color: #8fb3ff; }
+section.feature .card { color: var(--ink); }
+section.feature .card h3 { color: var(--blue); }
+@media (max-width: 640px) {
+  .wrap { padding: 0 16px; }
+  .grid, #services .grid { grid-template-columns: 1fr; }
+  .card { padding: 18px; }
+  .brand { font-size: 16px; letter-spacing: 1px; }
+  .hero h1 { font-size: 26px; }
+  .hero p { font-size: 16px; }
+  .btn { display: block; text-align: center; margin: 0 0 10px; }
+  .pills span { font-size: 13px; }
+  h2 { font-size: 23px; }
+}
