@@ -31,6 +31,30 @@
   "description": "PeopleTools upgrades (8.55 through 8.62, and 8.63), PeopleSoft Update Manager (PUM) updates, DPK infrastructure builds and AI-assisted automation of upgrade and patch server builds."
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "What is the difference between a PeopleTools upgrade and a PeopleSoft application upgrade?", "acceptedAnswer": { "@type": "Answer", "text": "A PeopleTools upgrade moves the technical foundation (the PeopleTools release, middleware and supporting software) to a new version. Your application release, such as HCM 9.2 or FSCM 9.2, stays the same. Application updates are delivered separately through PeopleSoft Update Manager (PUM) images." } },
+    { "@type": "Question", "name": "How long does a PeopleTools upgrade take?", "acceptedAnswer": { "@type": "Answer", "text": "It depends on how many applications you run, how far you are moving and how many customizations you have. Hannaware gives you a timeline after the upgrade assessment, with the number of test passes agreed up front." } },
+    { "@type": "Question", "name": "Can a PeopleTools upgrade be done remotely?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Hannaware delivers PeopleTools upgrades fully remotely, working with your infrastructure, database and functional teams." } },
+    { "@type": "Question", "name": "Should we upgrade to PeopleTools 8.62 or go straight to 8.63?", "acceptedAnswer": { "@type": "Answer", "text": "That depends on your current release, your database and operating system certifications, and your timeline. The Hannaware PeopleTools 8.63 upgrade guide explains what to check before you decide." } },
+    { "@type": "Question", "name": "Do you apply PUM images as part of the upgrade?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Hannaware can apply PeopleSoft Update Manager images and selected fixes alongside the PeopleTools upgrade, or schedule them as a separate update." } },
+    { "@type": "Question", "name": "Can you upgrade PeopleSoft on Oracle Cloud Infrastructure (OCI)?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Hannaware provisions and manages PeopleSoft environments on OCI with PeopleSoft Cloud Manager and the OCI CLI, and also supports AWS and on-premises servers." } }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://hannaware.com/" },
+    { "@type": "ListItem", "position": 2, "name": "PeopleTools Upgrade Services", "item": "https://hannaware.com/peopletools-upgrade/" }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -136,6 +160,129 @@
       <li><b>Stabilize:</b> validate, tune and hand over, then keep patches current with automated CPU/CSPU cycles.</li>
     </ol>
     <div class="callout">Planning a move to PeopleTools 8.63? Read our <a href="/peopletools-8-63-upgrade/">PeopleTools 8.63 upgrade planning guide</a>, or <a href="/#contact">contact us</a> for an upgrade assessment.</div>
+  </div>
+</section>
+
+<section class="soft" id="included">
+  <div class="wrap">
+    <h2>What a PeopleTools upgrade service includes</h2>
+    <p class="lead">A PeopleTools upgrade touches the database, the middleware, the batch servers and every customization. Our service covers the whole technical scope, so your functional teams can focus on testing.</p>
+    <div class="grid">
+      <div class="card">
+        <h3>Before the upgrade</h3>
+        <ul>
+          <li>Inventory of current PeopleTools patch level, application images and customizations</li>
+          <li>Certification check for the database, operating system, WebLogic, Tuxedo, COBOL and search engine</li>
+          <li>Upgrade path and timeline, with the number of test passes agreed up front</li>
+          <li>Infrastructure design for on-premises, OCI or AWS environments</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>During the upgrade</h3>
+        <ul>
+          <li>DPK-based builds of the new PeopleTools home and middleware</li>
+          <li>Change Assistant upgrade jobs, data conversion steps and compare reports</li>
+          <li>Retrofit support for customized objects and integrations</li>
+          <li>Test environment refreshes with data masking between passes</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>After go-live</h3>
+        <ul>
+          <li>Performance tuning of the application servers, process schedulers and database</li>
+          <li>Search framework rebuild (Elasticsearch or OpenSearch) and Integration Broker checks</li>
+          <li>Runbooks and knowledge transfer for your team</li>
+          <li>Ongoing PUM image updates and quarterly security patching</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="platforms">
+  <div class="wrap">
+    <h2>PeopleSoft applications and platforms we upgrade</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Applications</h3>
+        <ul>
+          <li>PeopleSoft HCM / HRMS and Payroll</li>
+          <li>PeopleSoft Financials and Supply Chain (FSCM)</li>
+          <li>PeopleSoft Campus Solutions</li>
+          <li>PeopleSoft Interaction Hub, ELM, EPM and CRM</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Databases</h3>
+        <ul>
+          <li>Oracle Database 12c and 19c, including RAC, Exadata and Data Guard</li>
+          <li>Microsoft SQL Server, including Always On</li>
+          <li>IBM DB2, including mainframe DB2 to Oracle migrations</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Hosting</h3>
+        <ul>
+          <li>Oracle Cloud Infrastructure (OCI) with PeopleSoft Cloud Manager</li>
+          <li>Amazon Web Services (AWS)</li>
+          <li>On-premises Linux, Unix and Windows servers</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="soft" id="challenges">
+  <div class="wrap narrow">
+    <h2>Common PeopleTools upgrade challenges we solve</h2>
+    <ul>
+      <li><b>Long outage windows.</b> We rehearse the cutover and run PeopleTools and PUM upgrades in parallel to keep downtime short.</li>
+      <li><b>Environments that drift apart.</b> Automated, scripted builds mean every test and production environment is built the same way.</li>
+      <li><b>Customizations that break.</b> Compare reports and retrofit steps are planned into each test pass, not discovered at go-live.</li>
+      <li><b>Performance after the upgrade.</b> JVM heap, application server domains and process counts are tuned for your peak periods, such as open enrollment or year-end.</li>
+      <li><b>Security patches that lag behind.</b> Jenkins-automated CPU and CSPU patching keeps the new release current after go-live.</li>
+      <li><b>Audit requirements.</b> Every step is documented, which supports SOX and internal security reviews.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="engagements">
+  <div class="wrap">
+    <h2>Ways to work with Hannaware</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Upgrade assessment</h3>
+        <p>A short, fixed-scope review of your current release, infrastructure and customizations, with a written upgrade plan and timeline.</p>
+      </div>
+      <div class="card">
+        <h3>Full PeopleTools upgrade</h3>
+        <p>We plan, build and run the technical upgrade end to end, from the first test pass through go-live and stabilization.</p>
+      </div>
+      <div class="card">
+        <h3>Ongoing PeopleSoft support</h3>
+        <p>Remote PeopleSoft administration, PUM updates, quarterly patching and Oracle database administration after the upgrade.</p>
+      </div>
+    </div>
+    <p>Hannaware brings 16+ years of hands-on PeopleSoft administration and Oracle database work, including 15 full life-cycle PeopleSoft implementations and upgrades. All work is delivered remotely from the United States. See also our <a href="/#services">full list of PeopleSoft and Oracle services</a>.</p>
+  </div>
+</section>
+
+<section class="soft" id="faq">
+  <div class="wrap narrow">
+    <h2>PeopleTools upgrade FAQ</h2>
+    <h3>What is the difference between a PeopleTools upgrade and a PeopleSoft application upgrade?</h3>
+    <p>A PeopleTools upgrade moves the technical foundation (the PeopleTools release, middleware and supporting software) to a new version. Your application release, such as HCM 9.2 or FSCM 9.2, stays the same. Application updates are delivered separately through PeopleSoft Update Manager (PUM) images.</p>
+    <h3>How long does a PeopleTools upgrade take?</h3>
+    <p>It depends on how many applications you run, how far you are moving and how many customizations you have. We give you a timeline after the upgrade assessment, with the number of test passes agreed up front.</p>
+    <h3>Can a PeopleTools upgrade be done remotely?</h3>
+    <p>Yes. Hannaware delivers PeopleTools upgrades fully remotely, working with your infrastructure, database and functional teams.</p>
+    <h3>Should we upgrade to PeopleTools 8.62 or go straight to 8.63?</h3>
+    <p>That depends on your current release, your database and operating system certifications, and your timeline. Our <a href="/peopletools-8-63-upgrade/">PeopleTools 8.63 upgrade guide</a> explains what to check before you decide.</p>
+    <h3>Do you apply PUM images as part of the upgrade?</h3>
+    <p>Yes. We can apply PeopleSoft Update Manager images and selected fixes alongside the PeopleTools upgrade, or schedule them as a separate update.</p>
+    <h3>Can you upgrade PeopleSoft on Oracle Cloud Infrastructure (OCI)?</h3>
+    <p>Yes. We provision and manage PeopleSoft environments on OCI with PeopleSoft Cloud Manager and the OCI CLI, and we also support AWS and on-premises servers.</p>
+    <div class="callout">Ready to plan your PeopleTools upgrade? <a href="/#contact">Contact Hannaware</a> for an upgrade assessment.</div>
   </div>
 </section>
 
