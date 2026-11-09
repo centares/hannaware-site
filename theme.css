@@ -35,3 +35,10 @@ section ul li::marker, section ol li::marker { color: var(--blue); font-weight: 
 footer { background: #0f2c5c; color: #c9d6ee; border-top: none; padding: 28px 0; }
 footer a { color: #fff; }
 #services .grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.pills { display: flex; flex-wrap: wrap; gap: 8px; margin: -8px 0 24px; }
+.pills span { background: rgba(255, 255, 255, 0.14); border: 1px solid rgba(255, 255, 255, 0.35); color: #fff; padding: 5px 12px; border-radius: 999px; font-size: 14px; font-weight: 600; }
+section.feature { background: linear-gradient(135deg, #0f2c5c, #163a75); color: #fff; }
+section.feature h2 { color: #fff; }
+section.feature > .wrap > h2::after { background: #8fb3ff; }
+section.feature .lead { color: #d7e2f5; }
+section.feature .card { border-top-color: #8fb3ff; }
