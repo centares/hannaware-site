@@ -34,3 +34,4 @@ section ul li::marker, section ol li::marker { color: var(--blue); font-weight: 
 
 footer { background: #0f2c5c; color: #c9d6ee; border-top: none; padding: 28px 0; }
 footer a { color: #fff; }
+#services .grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
